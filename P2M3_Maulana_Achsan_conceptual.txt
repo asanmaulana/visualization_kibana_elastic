@@ -1,0 +1,71 @@
+File Txt akan digunakan untuk menjawab conceptual Question dari tugas milestone 3 
+
+---
+## Conceptual Problems
+
+*Jawab pertanyaan berikut dengan menggunakan kalimat Anda sendiri:*
+
+1. Jelaskan apa yang dimaksud dengan NoSQL menggunakan pemahaman yang kalian ketahui !
+No sql adalah salah satu database management system, selain sistem ini ada rdbms alias relational database system. 
+Secara konsepsional perbedaan antara sql dan no sql adalah jenis data yang disimpan. 
+jika kita analogikan dalam sebuah satu lembar kertas, 
+no sql adalah data yang disimpan seperti nama alamat dari semua murid di dalam satu kelas,
+ nah penyimpanan ini mungkin bisa aja berbentuk paragraf ; 
+bisa juga penggunaan nama : nama murid ke 1, kelas : kelas murid ke 1 lanjut ke baris data kedua. 
+jika kita bandingkan dengan sql maka sql adalah jenis data yang lebih struktur dan biasanya sudah 
+terbentuk tabel dalam secarik kertas yang kita asumsikan. Secara garis besar no sql adalah sebuah data base 
+yang menyimpan data dengan sistim less structured data. kelebihan less unstructured data ini untuk penyimpanan video , 
+gambar, musik, yang membutuhkan kapasitas less unstructured. Pada pembangunan proyek applikasi jika suatu 
+perusahaan belum mengetahui data apa yang akan disimpan maka lebih baik penggunaan no sql pada awalnya, 
+ketika perusahaan sudah mature baru ditentukan lagi ke depannya karakteristik perusahaan seperti apa. 
+
+
+2. Jelaskan kapan harus menggunakan NoSQL dan Relational Database Management System !
+
+Penggunaan NOSQL untuk perusahaan yang belum mature dan kita tidak tau data apa saja yang akan disimpan. 
+Karena nosql bisa di scale dengan sangat cepat dan aturan-aturan normalisasi cenderung tidak ada ketika no sql 
+dan ketika perusahaan baru dibangun. 
+SQL biasanya cocok untuk perusahaan yang sudah jalan dan sudah tau data apa saja yang disimpan.
+
+NoSQl biasanya untuk menyimpan data-data tidak terstruktur atau kurang terstruktur
+
+SQL untuk penyimpanan data terstruktur dan kemudahan terbaca untuk user. 
+
+3. Sebutkan contoh 2 tools/platform NoSQL selain ElasticSearch beserta keunggulan tools/platform tersebut !
+
+Mongo DB. Untuk menimpan data dalam format dokumen dalam bentuk JSON atau BSON. Keunggulan dari Mongo db adalah 
+schemales dan juga sclabilitynya. Serta dukungan dari penggunaan yang luas. 
+
+Cassandra 
+Dirancang untuk menangani volume data yang besar. Sangat efisien dalam penulisan data (write intensive operations)
+Penggunaan column family store untuk penyimapanan database. 
+
+4. Jelaskan apa yang Anda ketahui dari Airflow menggunakan pemahaman dan bahasa Anda sendiri !
+
+AIRFLOW adalah orkestrasi sebuah perintah dan melakukan perintah untuk perintah-perintah DAG yaitu perintah-perintah 
+yang tidak memiliki siklus. Airflow juga mendukung untuk schedule perlakuan orkestrasi sehingga bisa dilakukan pengambilan 
+data atau pembersihan data pada waktu waktu tertentu. Airflow juga bisa digunakan untuk memerintah program lain sehingga 
+kita bisa mengetahui tahapan-tahapan yang akan dilakukan setelah satu step ke step lain. mirip seperti konsep pipeline namun 
+untuk aplikasi. bisa dibilang integrasi dan eksekusi tugas lintas platform.
+
+5. Jelaskan apa yang Anda ketahui dari Great Expectations menggunakan pemahaman dan bahasa Anda sendiri !
+Great Expectations adalah salah satu library untuk validasi mengenai dataset. Dari dataset suatu kolom kita bisa berharap 
+dalam dataset itu harus positif semua, tidak boleh null value. atau harus di dalam range tertentu. 
+Dengan adanya ekspektasi itu maka menunjukkan bahwa data atau kolom itu merupakan value yang pasti. tidak ada value-value
+yang keluar dari range atau tidak masuk akal. Misal contoh masa total unit terjual di angka negatif harusnya tidak mungkin
+disinilah kegunaan dari great expectation dipakai
+
+6. Jelaskan apa yang Anda ketahui dari Batch Processing menggunakan pemahaman dan bahasa Anda sendiri (Definisi, Contoh Kasus Penggunaan, Tools, dll) !
+
+Batch processing adalah pemrosessan data yang mana dikumpulkan dan diproses dalam jangka waktu tertentu. Waktu yang dipakai biasanya mingguan bulanan atau harian
+batch processing dilakukan untuk pemrosessan data yang tidak butuh data secara real time. 
+Ini dilakukan biasanya diluar jam operasional untuk mengoptimalkan sumber daya dan komputasi. 
+
+Kasus penggunaan biaasanya untuk Penggajian , Penagihan dan faktur, ETL (extract , transform , dan load) Backup dan analisis historis. 
+biasanya penyimpanan data di cloud ini menggunakan yang jarang dilakukan transaksi. oleh karena itu penyimpanan biasanya cenderung murah 
+di beberapa cloud drive
+
+Tools yang biasa digunakan mungkin airflow, apache hadoop, apache spark, aws batch. 
+
+
+---

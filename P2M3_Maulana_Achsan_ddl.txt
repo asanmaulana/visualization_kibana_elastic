@@ -1,0 +1,65 @@
+URL dataset yang dijadikan acuan 
+[LINK] (https://www.kaggle.com/datasets/sadiqshah/bike-sales-in-europe/data)
+
+Syntax DDL ini sebenarnya sudah ada bersamaan dengan di DAG, ini dilakukan untuk menyesuaikan dengan perintah soal. 
+
+# memasukkan data ke postgres menggunakan docker 
+
+def save_to_sql():
+    # pembuatan koneksi terlebih dahulu 
+    # karena yang akses airflow maka host adalah postgres
+    conn_string = "dbname='postgres' host='postgres' user='airflow' password='airflow'"
+    # penggunaan database postgres database default bawaan pgadmin
+    conn = db.connect(conn_string)
+    cur = conn.cursor()
+
+    # Membuat tabel jika belum ada
+    sql = '''
+        CREATE TABLE IF NOT EXISTS table_m3 (
+            "Date" DATE,
+            "Day" INT,
+            "Month" VARCHAR(50),
+            "Year" INT,
+            "Customer_Age" INT,
+            "Age_Group" VARCHAR(50),
+            "Customer_Gender" CHAR(1),
+            "Country" VARCHAR(100),
+            "State" VARCHAR(100),
+            "Product_Category" VARCHAR(100),
+            "Sub_Category" VARCHAR(100),
+            "Product" VARCHAR(255),
+            "Order_Quantity" INT,
+            "Unit_Cost" NUMERIC,
+            "Unit_Price" NUMERIC,
+            "Profit" NUMERIC,
+            "Cost" NUMERIC,
+            "Revenue" NUMERIC
+        );
+    '''
+    cur.execute(sql)
+    # di atas adalah pembuatan table m3 pada database postgres
+    conn.commit()
+    cur.execute("DELETE FROM table_m3") # menghapus jika masih ada file di dalam sql ditakutkan nanti double copy dengan dag atau db sebelumnya
+                                        # karena kita hanya mengulang file yang sama. di real life mungkin penamaan database aja atau table yang beda
+
+    # Baca file CSV menggunakan pandas
+    df = pd.read_csv('/opt/airflow/dags/P2M3_maulana_achsan_data_raw.csv')
+
+    # Buat StringIO buffer untuk mempersiapkan data sebelum di-copy ke PostgreSQL
+    buffer = StringIO()
+    df.to_csv(buffer, index=False, header=False)  # Convert DataFrame ke CSV format, tanpa index dan header
+    buffer.seek(0)
+
+    # Menggunakan COPY untuk mengimpor semua data dari CSV
+    cur.copy_expert("""
+        COPY table_m3 ("Date", "Day", "Month", "Year", "Customer_Age", "Age_Group", 
+                       "Customer_Gender", "Country", "State", "Product_Category", 
+                       "Sub_Category", "Product", "Order_Quantity", "Unit_Cost", 
+                       "Unit_Price", "Profit", "Cost", "Revenue") 
+        FROM STDIN WITH CSV;
+    """, buffer)
+
+    # Commit and close the connection
+    conn.commit()
+    cur.close()
+    conn.close()
