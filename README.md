@@ -1,8 +1,10 @@
-Visualisasi Revenue 📊 - Airflow Kibana Elastic_search
+# Visualisasi Revenue 📊 - 
+
+## Airflow Kibana Elastic_search
 Repositori ini berisi proyek visualisasi data menggunakan Apache Airflow , Elastic_search, dan Kibana. Penggunaan Airflow untuk otomatisasi step dan kemudian kita memakai elastic search 
 untuk menyimpan data kita serta menggunakan kibana untuk visualisasi dan mendapatkan insight dari dataset yang kita miliki. 
 
-Daftar Isi 🗒️
+## Daftar Isi 🗒️
 
 Link Terkait Project
 Project Overview
@@ -13,10 +15,10 @@ Dependencies
 Libraries
 Author
 
-Link Terkait Project ⛓️‍💥
+## Link Terkait Project ⛓️‍💥
 [LINK_DATASET](https://www.kaggle.com/datasets/sadiqshah/bike-sales-in-europe/data)
 
-Project Overview 📝
+## Project Overview 📝
 
 Dalam proyek ini, saya menggunakan Apache Airflow untuk mengautomasi proses ETL (Extract, Transform, Load) dan menggunakan Kibana untuk visualisasi data yang telah diproses.
 Beberapa langkah utama yang dicakup dalam proyek ini adalah:
@@ -36,13 +38,13 @@ Visualisasi dengan Kibana:
 
 Menggunakan Kibana untuk menyajikan data dalam format yang dapat dianalisis secara visual.
 
-Metode yang Digunakan 🛠️
+## Metode yang Digunakan 🛠️
 
 ETL (Extract, Transform, Load)
 Visualisasi Data
 Automasi Proses
 
-File yang Tersedia 📂
+## File yang Tersedia 📂
 
 Maulana_Achsan_DAG.py: Skrip Python yang berisi definisi DAG di Airflow, termasuk langkah-langkah dalam proses ETL.
 
@@ -53,7 +55,7 @@ great_expectations.ipynb: Jupyter Notebook yang berisi validasi data menggunakan
 Terdapat juga hasil dari data raw dan data clean pada github ini untuk melihat datasetnya. 
 
 
-Cara Menggunakan Project Ini 💻
+## Cara Menggunakan Project Ini 💻
 Clone repositori ini ke dalam lokal Anda:
 
 git clone https://github.com/asanmaulana/visualization_kibana_elastic
@@ -65,11 +67,11 @@ Jalankan DAG di Airflow untuk memulai proses ETL.
 
 Akses Kibana untuk melihat visualisasi data.
 
-Dependencies ⚙️
+## Dependencies ⚙️
 Python 3.9.19
 Apache Airflow
 
-Libraries 📚
+## Libraries 📚
 
 Apache Airflow
 Pandas
@@ -78,6 +80,6 @@ Elasticsearch
 Kibana
 Datetime
 
-Author ✍️
+## Author ✍️
 Maulana Achsan
 
