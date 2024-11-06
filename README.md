@@ -46,9 +46,13 @@ Automasi Proses
 
 ## File yang Tersedia 📂
 
-Maulana_Achsan_DAG.py: Skrip Python yang berisi definisi DAG di Airflow, termasuk langkah-langkah dalam proses ETL.
+Maulana_Achsan_DAG.py
 
-great_expectations.ipynb: Jupyter Notebook yang berisi validasi data menggunakan Great Expectations.
+ Skrip Python yang berisi definisi DAG di Airflow, termasuk langkah-langkah dalam proses ETL.
+
+great_expectations.ipynb
+
+Jupyter Notebook yang berisi validasi data menggunakan Great Expectations.
 
 (folder) images: Hasil visualisasi dari Kibana.
 
@@ -56,13 +60,16 @@ Terdapat juga hasil dari data raw dan data clean pada github ini untuk melihat d
 
 
 ## Cara Menggunakan Project Ini 💻
-Clone repositori ini ke dalam lokal Anda:
+Clone repositori ini ke dalam lokal Anda.
 
 git clone https://github.com/asanmaulana/visualization_kibana_elastic
-Jalankan Apache Airflow untuk mengelola alur kerja:
+
+Jalankan Apache Airflow untuk mengelola alur kerja.
 
 airflow webserver --port 8080
+
 airflow scheduler
+
 Jalankan DAG di Airflow untuk memulai proses ETL.
 
 Akses Kibana untuk melihat visualisasi data.
