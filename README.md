@@ -23,18 +23,19 @@ Author
 Dalam proyek ini, saya menggunakan Apache Airflow untuk mengautomasi proses ETL (Extract, Transform, Load) dan menggunakan Kibana untuk visualisasi data yang telah diproses.
 Beberapa langkah utama yang dicakup dalam proyek ini adalah:
 
-Pengaturan Airflow:
+#### Pengaturan Airflow
 
 Mengonfigurasi dan menjalankan Airflow untuk mengelola alur kerja. Kita set di waktu tertentu kapan airflow akan mengambil dataset secara otomatis kemudian kita masukkan ke SQL setelah itu dari SQL kita coba transfer data kita ke Elastic Search. 
 
-Pengembangan DAG:
+#### Pengembangan DAG
 
 Membangun DAG (Directed Acyclic Graph) untuk mendefinisikan alur kerja data.
 
-Transformasi Data:
+#### Transformasi Data
 
 Melakukan transformasi data yang diperlukan sebelum visualisasi.
-Visualisasi dengan Kibana:
+
+#### Visualisasi dengan Kibana
 
 Menggunakan Kibana untuk menyajikan data dalam format yang dapat dianalisis secara visual.
 
